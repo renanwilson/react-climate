@@ -1,8 +1,11 @@
-import { Index } from "./Components/pages/Index";
+import Controller from "./Components/Controller";
+import { AppContextProvider } from "./Context/AppContext";
 import "./index.css";
 
-function App() {
-  return <Index />;
+export default function App() {
+  return (
+    <AppContextProvider>
+      <Controller />
+    </AppContextProvider>
+  );
 }
-
-export default App;

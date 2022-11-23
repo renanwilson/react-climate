@@ -1,27 +1,14 @@
-import { Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import React from "react";
 
 import { useGetWeather } from "../../../common/WeatherApi";
-import { Container, Input, Card, Temperatura } from "./index.style";
-import { types } from "../../../common/Icon";
+import { Container, Input } from "./index.style";
 
 export function Index() {
-  const { getWeatherButtonClick, weather, getWeather, location, setLocation } =
+  const { getWeatherButtonClick, getWeather, location, setLocation } =
     useGetWeather();
 
-  return weather.main ? (
-    <>
-      <Container>
-        <Card>
-          {types(weather.main["temp"])}
-          <Typography variant="h3">{weather.name}</Typography>
-          <Temperatura>
-            <Typography variant="h4">{weather.main["temp"]}</Typography>
-          </Temperatura>
-        </Card>
-      </Container>
-    </>
-  ) : (
+  return (
     <Container>
       <Input
         color="secondary"

@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
+import { useAppcontext } from "../Context/AppContext";
 
 export function useGetWeather() {
   const [location, setLocation] = useState("");
-  const [weather, setWeather] = useState<any>({});
+  const { setApiCalled, setWeather } = useAppcontext();
 
   const getWeather = (event: any) => {
     if (event.key === "Enter") {
@@ -20,6 +21,7 @@ export function useGetWeather() {
           setWeather(response.data);
           console.log(response.data);
         });
+      setApiCalled(2);
       setLocation("");
     }
   };
@@ -36,13 +38,13 @@ export function useGetWeather() {
       .then((response) => {
         setWeather(response.data);
       });
+    setApiCalled(2);
     setLocation("");
   };
 
   return {
     getWeatherButtonClick,
     getWeather,
-    weather,
     location,
     setLocation,
   };
