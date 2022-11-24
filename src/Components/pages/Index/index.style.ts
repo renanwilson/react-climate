@@ -9,28 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
 `;
-export const Card = styled.div`
-  width: 50%;
-  height: 75%;
-  display: flex;
-  align-items: center;
-  box-shadow: 0px 2px 4px rgb(25 31 35 / 24%);
-  flex-direction: column;
-  border: 1px solid;
-  border-radius: 12px;
-  padding: 20px;
-`;
-export const Temperatura = styled.div`
-  width: 50%;
-  justify-content: space-around;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0px 2px 4px rgb(25 31 35 / 24%);
-  border: 1px solid;
-  border-radius: 12px;
-  padding: 20px;
-`;
+
 export const Input = styled(TextField)`
   width: 50%;
   text-align: center;

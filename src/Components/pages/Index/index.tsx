@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import React from "react";
 
 import { useGetWeather } from "../../../common/WeatherApi";
-import { Container, Input } from "./index.style";
+import { Container, Input } from "./Index.style";
 
 export function Index() {
   const { getWeatherButtonClick, getWeather, location, setLocation } =
