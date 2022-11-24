@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+
 import { useAppcontext } from "../Context/AppContext";
 
 export function useGetWeather() {
@@ -19,9 +20,11 @@ export function useGetWeather() {
         })
         .then((response) => {
           setWeather(response.data);
-          console.log(response.data);
+          setApiCalled(true);
+        })
+        .catch(() => {
+          alert("Digite apenas Cidades, Estados, Bairros e paises. ");
         });
-      setApiCalled(2);
       setLocation("");
     }
   };
@@ -38,7 +41,7 @@ export function useGetWeather() {
       .then((response) => {
         setWeather(response.data);
       });
-    setApiCalled(2);
+    setApiCalled(true);
     setLocation("");
   };
 
