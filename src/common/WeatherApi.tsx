@@ -23,7 +23,7 @@ export function useGetWeather() {
           setApiCalled(true);
         })
         .catch(() => {
-          alert("Digite apenas Cidades, Estados, Bairros e paises. ");
+          alert("Digite apenas Cidades, Estados, Bairros e paises.");
         });
       setLocation("");
     }
@@ -40,9 +40,12 @@ export function useGetWeather() {
       })
       .then((response) => {
         setWeather(response.data);
+        setLocation("");
+        setApiCalled(true);
+      })
+      .catch(() => {
+        alert("Digite apenas Cidades, Estados, Bairros e paises.");
       });
-    setApiCalled(true);
-    setLocation("");
   };
 
   return {
