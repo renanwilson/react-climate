@@ -50,3 +50,7 @@ export const Nuvems = styled.div`
   gap: 10px;
   justify-content: center;
 `;
+export const Imagem = styled.img`
+  width: 100px;
+  height: 100px;
+`;
