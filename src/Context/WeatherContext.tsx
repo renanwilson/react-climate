@@ -36,34 +36,29 @@ const INITIAL_STATE_WEATHER: Weather = {
   weather: [{ id: "", main: "", description: "", icon: "" }],
 };
 
-type AppContextProps = {
-  apiCalled: boolean;
-  setApiCalled: React.Dispatch<React.SetStateAction<boolean>>;
+type WeatherContextProps = {
   weather: Weather;
   setWeather: React.Dispatch<React.SetStateAction<Weather>>;
 };
-type AppContextProviderProps = {
+type WeatherContextProviderProps = {
   children: ReactElement;
 };
-const INITIAL_STATE: AppContextProps = {
-  apiCalled: false,
-  setApiCalled: () => {},
+const INITIAL_STATE: WeatherContextProps = {
   weather: INITIAL_STATE_WEATHER,
   setWeather: () => {},
 };
 
-export const AppContext = createContext<AppContextProps>(INITIAL_STATE);
+export const WeatherContext = createContext<WeatherContextProps>(INITIAL_STATE);
 
-export const useAppcontext = () => useContext(AppContext);
+export const useWeatherContext = () => useContext(WeatherContext);
 
-export const AppContextProvider = ({ children }: AppContextProviderProps) => {
-  const [apiCalled, setApiCalled] = useState(false);
+export const WeatherContextProvider = ({
+  children,
+}: WeatherContextProviderProps) => {
   const [weather, setWeather] = useState(INITIAL_STATE_WEATHER);
   return (
-    <AppContext.Provider
-      value={{ apiCalled, setApiCalled, weather, setWeather }}
-    >
+    <WeatherContext.Provider value={{ weather, setWeather }}>
       {children}
-    </AppContext.Provider>
+    </WeatherContext.Provider>
   );
 };

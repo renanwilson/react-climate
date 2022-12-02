@@ -1,11 +1,14 @@
 import axios from "axios";
-import { useState } from "react";
 
-import { useAppcontext } from "../Context/AppContext";
+import { useApiCalled } from "../Context/ApiCalledContext";
+import { useLocationContext } from "../Context/LocationContext";
+
+import { useWeatherContext } from "../Context/WeatherContext";
 
 export function useGetWeather() {
-  const [location, setLocation] = useState("");
-  const { setApiCalled, setWeather } = useAppcontext();
+  const { setWeather } = useWeatherContext();
+  const { setApiCalled } = useApiCalled();
+  const { setLocation, location } = useLocationContext();
 
   const getWeather = (event: any) => {
     if (event.key === "Enter") {

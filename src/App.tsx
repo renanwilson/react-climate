@@ -1,11 +1,5 @@
 import Controller from "./Components/Controller";
-import { AppContextProvider } from "./Context/AppContext";
+import { Allcontext } from "./Context/AllContext";
 import "./index.css";
 
-export default function App() {
-  return (
-    <AppContextProvider>
-      <Controller />
-    </AppContextProvider>
-  );
-}
+export const App = Allcontext(<Controller />);

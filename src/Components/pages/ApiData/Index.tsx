@@ -3,10 +3,10 @@ import React from "react";
 
 import { Container, Card, IconTemp } from "./Index.style";
 
-import { useAppcontext } from "../../../Context/AppContext";
+import { useWeatherContext } from "../../../Context/WeatherContext";
 
 export function ApiData() {
-  const { weather } = useAppcontext();
+  const { weather } = useWeatherContext();
   let pressure = Number(weather.main.pressure) / 100;
 
   return (

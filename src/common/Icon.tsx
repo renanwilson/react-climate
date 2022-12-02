@@ -1,7 +1,7 @@
-import { useAppcontext } from "../Context/AppContext";
+import { useWeatherContext } from "../Context/WeatherContext";
 
 export function IconTypes() {
-  const { weather } = useAppcontext();
+  const { weather } = useWeatherContext();
   return (
     <img
       src={`icons/${weather.weather[0].icon}.png`}
