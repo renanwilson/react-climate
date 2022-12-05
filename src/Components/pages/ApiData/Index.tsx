@@ -20,7 +20,6 @@ export const ApiData = () => {
           display="flex"
           alignItems="center"
           justifyContent="center"
-          direction="row"
         >
           <Typography variant="h4">{weather.name}</Typography>
           <IconTypes />
