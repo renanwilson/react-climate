@@ -1,13 +1,15 @@
 import React, {
   createContext,
+  Dispatch,
   ReactElement,
+  SetStateAction,
   useContext,
   useState,
 } from "react";
 
 type ApiCalledProps = {
   apiCalled: boolean;
-  setApiCalled: React.Dispatch<React.SetStateAction<boolean>>;
+  setApiCalled: Dispatch<SetStateAction<boolean>>;
 };
 type ApiCalledProviderProps = {
   children: ReactElement;

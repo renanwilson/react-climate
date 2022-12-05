@@ -1,6 +1,8 @@
 import React, {
   createContext,
+  Dispatch,
   ReactElement,
+  SetStateAction,
   useContext,
   useState,
 } from "react";
@@ -38,7 +40,7 @@ const INITIAL_STATE_WEATHER: Weather = {
 
 type WeatherContextProps = {
   weather: Weather;
-  setWeather: React.Dispatch<React.SetStateAction<Weather>>;
+  setWeather: Dispatch<SetStateAction<Weather>>;
 };
 type WeatherContextProviderProps = {
   children: ReactElement;

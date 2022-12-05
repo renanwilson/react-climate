@@ -1,11 +1,11 @@
 import { Button } from "@mui/material";
 import React from "react";
 
-import { useGetWeather } from "../../../common/WeatherApi";
-import { useLocationContext } from "../../../Context/LocationContext";
+import { useGetWeather } from "common/WeatherApi";
+import { useLocationContext } from "Context/LocationContext";
 import { Container, Input } from "./Index.style";
 
-export function Index() {
+export const Index = () => {
   const { getWeatherButtonClick, getWeather } = useGetWeather();
   const { location, setLocation } = useLocationContext();
 
@@ -22,4 +22,4 @@ export function Index() {
       <Button onClick={getWeatherButtonClick}>Enviar</Button>
     </Container>
   );
-}
+};

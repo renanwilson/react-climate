@@ -1,4 +1,4 @@
-import Controller from "./Components/Controller";
+import { Controller } from "./Components/Controller";
 import { Allcontext } from "./Context/AllContext";
 import "./index.css";
 
