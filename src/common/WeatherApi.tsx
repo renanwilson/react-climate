@@ -1,9 +1,8 @@
-import axios from "axios";
-
 import { useApiCalled } from "../Context/ApiCalledContext";
 import { useLocationContext } from "../Context/LocationContext";
 
 import { useWeatherContext } from "../Context/WeatherContext";
+import { WeatherApi } from "../services/WeatherApi";
 
 export function useGetWeather() {
   const { setWeather } = useWeatherContext();
@@ -12,15 +11,11 @@ export function useGetWeather() {
 
   const getWeather = (event: any) => {
     if (event.key === "Enter") {
-      axios
-        .get("http://api.openweathermap.org/data/2.5/weather?", {
-          params: {
-            q: location,
-            appid: process.env.REACT_APP_OPEN_WHEATER_KEY,
-            lang: "pt_br",
-            units: "metric",
-          },
-        })
+      WeatherApi.get("", {
+        params: {
+          q: location,
+        },
+      })
         .then((response) => {
           setWeather(response.data);
           setApiCalled(true);
@@ -32,18 +27,13 @@ export function useGetWeather() {
     }
   };
   const getWeatherButtonClick = () => {
-    axios
-      .get("http://api.openweathermap.org/data/2.5/weather?", {
-        params: {
-          q: location,
-          appid: process.env.REACT_APP_OPEN_WHEATER_KEY,
-          lang: "pt_br",
-          units: "metric",
-        },
-      })
+    WeatherApi.get("", {
+      params: {
+        q: location,
+      },
+    })
       .then((response) => {
         setWeather(response.data);
-        setLocation("");
         setApiCalled(true);
       })
       .catch(() => {
@@ -54,7 +44,5 @@ export function useGetWeather() {
   return {
     getWeatherButtonClick,
     getWeather,
-    location,
-    setLocation,
   };
 }
