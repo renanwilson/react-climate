@@ -4,7 +4,7 @@ import { useLocationContext } from "../Context/LocationContext";
 import { useWeatherContext } from "../Context/WeatherContext";
 import { WeatherApi } from "../services/WeatherApi";
 
-export const useGetWeather = () => {
+export const useRequestsWeatherApi = () => {
   const { setWeather } = useWeatherContext();
   const { setApiCalled } = useApiCalled();
   const { setLocation, location } = useLocationContext();
