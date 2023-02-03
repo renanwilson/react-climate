@@ -1,4 +1,5 @@
-import { useApiCalled } from "../Context/ApiCalledContext";
+import { useListContext } from "Context/ListContext";
+import { useCallback } from "react";
 import { useLocationContext } from "../Context/LocationContext";
 
 import { useWeatherContext } from "../Context/WeatherContext";
@@ -6,43 +7,36 @@ import { WeatherApi } from "../services/WeatherApi";
 
 export const useRequestsWeatherApi = () => {
   const { setWeather } = useWeatherContext();
-  const { setApiCalled } = useApiCalled();
-  const { setLocation, location } = useLocationContext();
 
-  const getWeather = (event: any) => {
-    if (event.key === "Enter") {
-      WeatherApi.get("", {
-        params: {
-          q: location,
-        },
-      })
-        .then((response) => {
-          setWeather(response.data);
-          setApiCalled(true);
+  const { location } = useLocationContext();
+  const { list, setList } = useListContext();
+  const handleInput: React.KeyboardEventHandler<HTMLInputElement> = useCallback(
+    (e) => {
+      if (e.key === "Enter") {
+        if (e.currentTarget.value.trim().length === 0) return;
+        if (list.length >= 3) {
+          list.shift();
+        }
+        list.push({ location: e.currentTarget.value });
+        e.currentTarget.value = "";
+        setList([...list]);
+        WeatherApi.get("", {
+          params: {
+            q: location,
+          },
         })
-        .catch(() => {
-          alert("Digite apenas Cidades, Estados, Bairros e paises.");
-        });
-      setLocation("");
-    }
-  };
-  const getWeatherButtonClick = () => {
-    WeatherApi.get("", {
-      params: {
-        q: location,
-      },
-    })
-      .then((response) => {
-        setWeather(response.data);
-        setApiCalled(true);
-      })
-      .catch(() => {
-        alert("Digite apenas Cidades, Estados, Bairros e paises.");
-      });
-  };
+          .then((response) => {
+            setWeather(response.data);
+          })
+          .catch(() => {
+            alert("Digite apenas Cidades, Estados, Bairros e paises.");
+          });
+      }
+    },
+    [list, location, setWeather, setList]
+  );
 
   return {
-    getWeatherButtonClick,
-    getWeather,
+    handleInput,
   };
 };
