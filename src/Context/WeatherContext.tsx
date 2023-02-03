@@ -9,12 +9,12 @@ import React, {
 interface Weather {
   name: string;
   main: {
-    feels_like: string;
-    humidity: string;
+    feels_like: number;
+    humidity: number;
     pressure: string;
-    temp: string;
-    temp_max: string;
-    temp_min: string;
+    temp: number;
+    temp_max: number;
+    temp_min: number;
   };
   weather: [
     {
@@ -24,18 +24,28 @@ interface Weather {
       icon: string;
     }
   ];
+  wind: {
+    speed: number;
+    deg: number;
+    gust: number;
+  };
+  clouds: {
+    all: number;
+  };
 }
 const INITIAL_STATE_WEATHER: Weather = {
   name: "",
   main: {
-    feels_like: "",
-    humidity: "",
+    feels_like: 0,
+    humidity: 0,
     pressure: "",
-    temp: "",
-    temp_max: "",
-    temp_min: "",
+    temp: 0,
+    temp_max: 0,
+    temp_min: 0,
   },
   weather: [{ id: "", main: "", description: "", icon: "" }],
+  wind: { speed: 0, deg: 0, gust: 0 },
+  clouds: { all: 0 },
 };
 
 type WeatherContextProps = {
@@ -58,6 +68,7 @@ export const WeatherContextProvider = ({
   children,
 }: WeatherContextProviderProps) => {
   const [weather, setWeather] = useState(INITIAL_STATE_WEATHER);
+  console.log(weather);
   return (
     <WeatherContext.Provider value={{ weather, setWeather }}>
       {children}
