@@ -8,4 +8,7 @@ export const SearchIcon = styled(AiOutlineSearch)`
 `;
 export const InputColor = styled(Input)`
   color: white !important;
+  @media (max-width: 1000px) {
+    color: #000 !important;
+  }
 `;

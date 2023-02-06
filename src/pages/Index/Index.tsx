@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import React from "react";
 
-import { Container, Aside, InputContainer, AsideContainer } from "./styles";
+import { Container, Aside, InputContainer, AsideContent } from "./styles";
 
 import { InfoLocation } from "Components/InfoLocation/InfoLocation";
 import { SearchInput } from "Components/SearchInput/SearchInput";
@@ -12,15 +12,16 @@ export const ApiData = () => {
   return (
     <Container>
       <InfoLocation />
+
       <Aside>
         <InputContainer>
           <SearchInput />
         </InputContainer>
-        <AsideContainer>
+        <AsideContent>
           <LocationList title="Suas buscas recentes" />
           <Typography variant="h6">Detalhes</Typography>
           <WeatherInfos />
-        </AsideContainer>
+        </AsideContent>
       </Aside>
     </Container>
   );

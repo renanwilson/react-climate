@@ -12,6 +12,10 @@ export const Container = styled.div`
   background-image: url(${image});
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  @media (max-width: 1000px) {
+    background-image: none;
+    flex-direction: column;
+  }
 `;
 
 export const Aside = styled.div`
@@ -21,13 +25,17 @@ export const Aside = styled.div`
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(13.5px);
   -webkit-backdrop-filter: blur(13.5px);
+  @media (max-width: 1000px) {
+    width: 89%;
+    height: 100%;
+  }
 `;
 
 export const InputContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
-export const AsideContainer = styled.div`
+export const AsideContent = styled.div`
   display: flex;
   height: 100%;
   flex-direction: column;

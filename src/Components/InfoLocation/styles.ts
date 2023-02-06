@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import styled from "styled-components";
+import image from "assets/img/wetplant.jpg";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -10,6 +11,12 @@ export const AsideImage = styled.div`
   color: white;
   display: flex;
   align-items: flex-end;
+  @media (max-width: 1000px) {
+    width: 100%;
+    background-image: url(${image});
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
 `;
 export const Content = styled.div`
   display: flex;
