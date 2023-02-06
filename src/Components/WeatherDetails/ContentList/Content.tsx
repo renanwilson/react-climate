@@ -13,7 +13,7 @@ export function Content(): IContent {
     { title: "Nuvens", info: `${weather.clouds.all} %` },
     { title: "Vento", info: `${weather.wind.speed} m/s` },
     { title: "Sensação", info: `${weather.main.feels_like.toFixed()}°` },
-    { title: "Humidade", info: `${weather.main.humidity.toFixed()}°` },
+    { title: "Humidade", info: `${weather.main.humidity.toFixed()}%` },
   ];
   return { Info };
 }

@@ -8,7 +8,7 @@ export function ContentList() {
         return (
           <Details key={title}>
             <DetailsFont variant="inherit">{title}</DetailsFont>
-            <DetailsFont variant="inherit">{info} %</DetailsFont>
+            <DetailsFont variant="inherit">{info}</DetailsFont>
           </Details>
         );
       })}
