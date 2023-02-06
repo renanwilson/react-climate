@@ -17,9 +17,12 @@ export const useRequestsWeatherApi = () => {
         if (list.length >= 3) {
           list.pop();
         }
-        list.unshift({ location: e.currentTarget.value });
+        const ramdomNumber = Math.floor(Math.random() * 100);
+        const id = `y${ramdomNumber}`;
+        list.unshift({ location: e.currentTarget.value, id });
         e.currentTarget.value = "";
         setList([...list]);
+        localStorage.setItem("list", JSON.stringify(list));
         WeatherApi.get("", {
           params: {
             q: location,

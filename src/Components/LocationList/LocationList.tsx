@@ -10,8 +10,12 @@ export function LocationList({ title }: LocationListType) {
     <>
       <Title variant="inherit">{title}</Title>
       <RecentsContainer>
-        {list.map(({ location }) => {
-          return <Recents>{location}</Recents>;
+        {list.map(({ location, id }) => {
+          return (
+            <div key={id}>
+              <Recents>{location}</Recents>
+            </div>
+          );
         })}
       </RecentsContainer>
     </>
