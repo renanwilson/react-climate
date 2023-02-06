@@ -1,13 +1,27 @@
-# Getting Started with Create React App
+# React Weather ☁️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🖥️ See this project in te web 
+- [React Weather!](https://react-climate-85bvdi232-renanwilson.vercel.app)
 
-## About this project
+## 🚀 Technologies
 
-This project is a Weather information, using the Weather Api https://openweathermap.org/api.
+This project is using: 
+- [ReactJS](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/)
+- [Material UI](https://mui.com)
 
-### For run this project
+## 💻 About this project
 
-`yarn install` to download node_modules
+The React Weather is a aplication you can see the weather information about any locations, and about your actualy location!
 
-`yarn start` to open in you navigator
+## 🔖Layout
+This Layout is inspired in a dribble project
+
+- [Layout](https://dribbble.com/shots/13950420-Weather-App-Clima)
+
+## 📜 Scripts
+
+For you run this project you need to:
+- `yarn install` to download node_modules
+- `yarn start` to open in you navigator
