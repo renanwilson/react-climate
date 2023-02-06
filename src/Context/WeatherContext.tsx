@@ -68,7 +68,7 @@ export const WeatherContextProvider = ({
   children,
 }: WeatherContextProviderProps) => {
   const [weather, setWeather] = useState(INITIAL_STATE_WEATHER);
-  console.log(weather);
+
   return (
     <WeatherContext.Provider value={{ weather, setWeather }}>
       {children}
