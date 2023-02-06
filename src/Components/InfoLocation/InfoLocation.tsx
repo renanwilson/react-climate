@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { getDate } from "common/getDate";
+import { getDate } from "utils/getDate";
 import { IconTypes } from "Components/IconTemp/IconTemp";
 import { useWeatherContext } from "Context/WeatherContext";
 import {

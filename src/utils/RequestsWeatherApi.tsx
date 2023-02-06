@@ -15,9 +15,9 @@ export const useRequestsWeatherApi = () => {
       if (e.key === "Enter") {
         if (e.currentTarget.value.trim().length === 0) return;
         if (list.length >= 3) {
-          list.shift();
+          list.pop();
         }
-        list.push({ location: e.currentTarget.value });
+        list.unshift({ location: e.currentTarget.value });
         e.currentTarget.value = "";
         setList([...list]);
         WeatherApi.get("", {

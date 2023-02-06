@@ -1,5 +1,5 @@
 import { IconButton, InputAdornment } from "@mui/material";
-import { useRequestsWeatherApi } from "common/RequestsWeatherApi";
+import { useRequestsWeatherApi } from "utils/RequestsWeatherApi";
 import { useLocationContext } from "Context/LocationContext";
 import { InputColor, SearchIcon } from "./styles";
 
