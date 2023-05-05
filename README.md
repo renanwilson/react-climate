@@ -1,4 +1,5 @@
 # React Weather ☁️
+<img src="https://user-images.githubusercontent.com/62245391/236499587-a2c5c8f8-172b-4509-b051-92e696f920c4.png" />
 
 ## 🖥️ See this project in te web 
 - [React Weather!](https://react-climate-85bvdi232-renanwilson.vercel.app)
